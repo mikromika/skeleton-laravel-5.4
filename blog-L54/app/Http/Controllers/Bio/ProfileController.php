@@ -3,8 +3,10 @@
 namespace App\Http\Controllers\Bio;
 
 use App\User;
+use App\Profile;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Http\Request;
 use Illuminate\Foundation\Auth\RegistersUsers;
 
 class ProfileController extends Controller
@@ -50,8 +52,8 @@ class ProfileController extends Controller
         return Validator::make($data, [
             'firstname' => 'required|max:255',
             'lastname' => 'required|max:255',
-            //'email' => 'required|email|max:255|unique:users',
-            //'password' => 'required|min:6|confirmed',
+             'phone' => 'max:255',
+             'mobile' => 'max:255',
         ]);
     }
 
@@ -66,8 +68,53 @@ class ProfileController extends Controller
         return Profile::create([
             'firstname' => $data['firstname'],
             'lastname' => $data['lastname'],
-            //'email' => $data['email'],
-            //'password' => bcrypt($data['password']),
-        ]);
+            'phone' => $data['phone'],
+            'mobile' => $data['mobile'],
+    ]);
     }
-}
+
+ protected function formcheck(Request $request)
+
+ {
+ $this->validator($request->all())->validate();
+ $this->guard()->login($this->create($request->all()));
+  return view ('bio.dashboard');
+
+ }
+
+    public function index()
+    {
+        return view('bio.dashboard');
+    }
+
+
+    public function createform()
+    {
+        return view('bio.profileform');
+    }
+
+
+// other way to get validation from model
+// ModelName::$rules
+//$validator = Validator::make(Input::all(), ModelName::$rules);
+
+// and model side  exsample
+
+// https://scotch.io/tutorials/laravel-form-validation
+//
+//protected $fillable = array('name', 'email', 'password');
+
+//    public static $rules = array(
+//        'name'             => 'required',                        // just a normal required validation
+//        'email'            => 'required|email|unique:ducks',     // required and must be unique in the table
+//        'password'         => 'required',                        // which is protected in modelside
+//        'password_confirm' => 'required|same:password'           // required and has to match the password field
+//    );
+//}
+
+
+
+
+
+
+}   // end of class

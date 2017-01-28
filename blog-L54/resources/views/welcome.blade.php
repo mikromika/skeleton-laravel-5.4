@@ -67,10 +67,16 @@
     <body>
         <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
-                <div class="top-right links">
+                <div class="top-left links">
                     @if (Auth::check())
-                        <a href="{{ url('/home') }}">Home</a>
+                        <a href="{{ url('/home') }}">main page/ dashboard</a>
+        <div>  {{ config('app.name', ' ') }} {{ config('app.version', ' ') }} </div>
+      <div class="top-right links">
+          <a href="{{ url('/bio/profile') }}">goto profile</a>
+        </div>
+        </div>
                     @else
+                      <div class="top-right links">
                         <a href="{{ url('/login') }}">Login</a>
                         <a href="{{ url('/register') }}">Register</a>
                     @endif
