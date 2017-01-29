@@ -29,10 +29,10 @@ class User extends Authenticatable
     ];
 
     // each user may have many profiles
-      public function profiles()
-       {
-          return $this->hasMany('Profile');
-      }
+    public function profiles()
+     {
+        return $this->hasMany('Profile');
+    }
 
 
       // DEFINE RELATIONSHIPS --------------------------------------------------
@@ -40,7 +40,7 @@ class User extends Authenticatable
     // also call the linking table
     public function users()
      {
-        return $this->belongsToMany('User', 'profiles_users', 'profile_id', 'user_id');
+        return $this->belongsToMany('App\User', 'profile_users', 'profile_id', 'user_id');
     }
 
 }  // end of class

@@ -33,6 +33,7 @@
                        <td>{{ Auth::user()->phone }}</td>
                        <td>{{ Auth::user()->mobile }}</td>
                     </tbody>
+                  
                   </table>
                 </div>
 

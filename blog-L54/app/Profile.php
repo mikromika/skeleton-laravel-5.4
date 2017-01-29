@@ -23,9 +23,9 @@ class Profile extends Authenticatable
 
              // each profiles BELONGS to many users, security, etc...
              // define our pivot table also
-      //       public function users() {
-      //           return $this->belongsToMany('user', 'users_profiles', 'user_id', 'profile_id');
-      //       }
+//           public function users() {
+//                 return $this->belongsToMany('user', 'profiles_users', 'user_id', 'profile_id');
+//             }
 
 
 
@@ -46,7 +46,7 @@ class Profile extends Authenticatable
       // also call the linking table
       public function profiles()
        {
-          return $this->belongsToMany('Profile', 'profiles_users', 'profile_id', 'user_id');
+          return $this->belongsToMany('App\Profile', 'profile_users', 'profile_id', 'user_id');
         }
 
     //      protected $hidden = [
