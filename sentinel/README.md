@@ -4,7 +4,7 @@ Answers:
 https://laravel-news.com/laravel-5-4-key-too-long-error
 
 Fix :
-<pre>
+
 
 <?php 
   namespace App\Providers;
@@ -26,5 +26,5 @@ Fix :
          Schema::defaultStringLength(191);
 
       } 
-    php?>
-    </pre>
+      
+      </pre>
