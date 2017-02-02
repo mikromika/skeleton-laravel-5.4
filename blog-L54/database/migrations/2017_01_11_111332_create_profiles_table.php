@@ -20,7 +20,7 @@ class CreateProfilesTable extends Migration
             $table->string('lastname');
             $table->string('phone');
             $table->string('mobile');
-
+            $table->integer('user_id'); // the id of the user 
             $table->timestamps();
         });
     }

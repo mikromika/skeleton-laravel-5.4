@@ -5,11 +5,13 @@ namespace App;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use App\Profile;
+use App\ProfileUser;
 
 class User extends Authenticatable
 {
     use Notifiable;
 
+    //protected $profile();
     /**
      * The attributes that are mass assignable.
      *
@@ -31,16 +33,12 @@ class User extends Authenticatable
     // each user may have many profiles
     public function profiles()
      {
-        return $this->hasMany('Profile');
+        return $this->hasMany('Profile','\App\Profile','user_id');
     }
 
 
-      // DEFINE RELATIONSHIPS --------------------------------------------------
-    // define a many to many relationship
-    // also call the linking table
-    public function users()
-     {
-        return $this->belongsToMany('App\User', 'profile_users', 'profile_id', 'user_id');
-    }
+
+
+
 
 }  // end of class

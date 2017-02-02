@@ -2,10 +2,13 @@
 
 @section('content')
 <div class="container">
+    {{var_dump ($errors)}}
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
             <div class="panel panel-default">
                 <div class="panel-heading">Profile dashboard</div>
+
+
 
                 <div class="panel-body" class="col-md-8 col-md-offset-2">
 
@@ -15,6 +18,7 @@
                   <table class="table">
                     <thead>
                       <tr>
+                        <th>User ID: </th>
                         <th>Login name</th>
                         <th>First name</th>
                         <th>Last name</th>
@@ -26,14 +30,18 @@
                     </thead>
 
                     <tbody>
+                      <td>{{ Auth::user()->id }}</td>
                        <td>{{ Auth::user()->name }}</td>
                        <td>{{ Auth::user()->firstname }}</td>
                        <td>{{ Auth::user()->lastname }}</td>
                        <td>{{ Auth::user()->email }}</td>
                        <td>{{ Auth::user()->phone }}</td>
                        <td>{{ Auth::user()->mobile }}</td>
+                       <td>{{ Auth::user()->user_id }}</td>
+
+
                     </tbody>
-                  
+
                   </table>
                 </div>
 

@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use App\User;
+use App\ProfileUser;
 
 class Profile extends Authenticatable
 {
@@ -23,9 +24,9 @@ class Profile extends Authenticatable
 
              // each profiles BELONGS to many users, security, etc...
              // define our pivot table also
-//           public function users() {
-//                 return $this->belongsToMany('user', 'profiles_users', 'user_id', 'profile_id');
-//             }
+    //     public function users() {
+    //             return $this->belongsToMany('user', 'profiles_users', 'user_id', 'profile_id');
+    //         }
 
 
 
@@ -36,18 +37,19 @@ class Profile extends Authenticatable
   //        return $this->hasOne('User');
   //      }
       // DEFINE RELATIONSHIPS --------------------------------------------------
-        public function users() {
-            return $this->belongsTo('User');
+        public function users()
+        {
+            return $this->belongsTo('User','\App\User','profiles_users')->withTimestamps();
         }
 
 
         // DEFINE RELATIONSHIPS --------------------------------------------------
       // define a many to many relationship
       // also call the linking table
-      public function profiles()
-       {
-          return $this->belongsToMany('App\Profile', 'profile_users', 'profile_id', 'user_id');
-        }
+    //  public function profiles()
+    //   {
+    //      return $this->belongsToMany('App\Profile', 'profile_users', 'profile_id', 'user_id');
+    //    }
 
     //      protected $hidden = [
     //          'status',

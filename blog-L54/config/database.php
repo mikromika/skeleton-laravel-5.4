@@ -49,7 +49,8 @@ return [
             'charset' => 'utf8mb4',
             'collation' => 'utf8mb4_unicode_ci',
             'prefix' => '',
-            'strict' => true,
+             //'strict' => true, //default
+              'strict' => false, // fix for error "no default value"
             'engine' => null,
         ],
 

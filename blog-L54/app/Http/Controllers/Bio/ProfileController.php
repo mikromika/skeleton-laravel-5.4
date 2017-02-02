@@ -41,6 +41,15 @@ class ProfileController extends Controller
         $this->middleware('auth');
     }
 
+
+  protected function user_id() {
+
+
+  }
+
+
+
+
     /**
      * Get a validator for an incoming registration request.
      *
@@ -65,20 +74,34 @@ class ProfileController extends Controller
      */
     protected function create(array $data)
     {
+
+    //  $user_id=(\App\User()->id);
+
         return Profile::create([
             'firstname' => $data['firstname'],
             'lastname' => $data['lastname'],
             'phone' => $data['phone'],
             'mobile' => $data['mobile'],
+
+
     ]);
     }
 
- protected function formcheck(Request $request)
+ //protected function formcheck(Request $request, Profile $profile)
 
+protected function formcheck(Request $request)
  {
+
+
  $this->validator($request->all())->validate();
+
+ //dd(request());
+ //dd(response());
  $this->guard()->login($this->create($request->all()));
-  return view ('bio.dashboard');
+
+//dd(request($request));
+
+ return view ('bio.dashboard');
 
  }
 
