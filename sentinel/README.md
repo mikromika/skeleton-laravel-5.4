@@ -4,6 +4,7 @@ Answers:
 https://laravel-news.com/laravel-5-4-key-too-long-error
 
 Fix :
+<code>
 <?php
 
 namespace App\Providers;
@@ -24,4 +25,5 @@ class AppServiceProvider extends ServiceProvider
         // here is fix 
        Schema::defaultStringLength(191);
 
-    }
+    } 
+    </code>
