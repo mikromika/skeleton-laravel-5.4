@@ -7,4 +7,6 @@ Homestead.json
 Homestead.yaml
 .env
 *.tgz
-*.sh
+*.tar
+*.gz
+*.info
