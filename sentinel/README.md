@@ -4,26 +4,27 @@ Answers:
 https://laravel-news.com/laravel-5-4-key-too-long-error
 
 Fix :
-<code>
-<?php
+<pre>
 
-namespace App\Providers;
+<?php 
+  namespace App\Providers;
 
-use Illuminate\Support\ServiceProvider;
-use Illuminate\Support\Facades\Schema;
+  use Illuminate\Support\ServiceProvider;
+  use Illuminate\Support\Facades\Schema;
 
-class AppServiceProvider extends ServiceProvider
-{
-    /**
-     * Bootstrap any application services.
-     *
-     * @return void
-     */
-    public function boot()
-    {
-        //https://laravel-news.com/laravel-5-4-key-too-long-error
-        // here is fix 
-       Schema::defaultStringLength(191);
+  class AppServiceProvider extends ServiceProvider
+  {
+      /**
+       * Bootstrap any application services.
+       *
+       * @return void
+       */
+      public function boot()
+      {
+          //https://laravel-news.com/laravel-5-4-key-too-long-error
+          // here is fix 
+         Schema::defaultStringLength(191);
 
-    } 
-    </code>
+      } 
+    php?>
+    </pre>
