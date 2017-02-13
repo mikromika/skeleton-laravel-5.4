@@ -1,4 +1,4 @@
-# skeleton-laravel-5.4
+# skeleton-laravel-5.4 / main folder / blog-L54 is project folder
 
 I am new with PHP and Laravel, I have started from zero knowledge from PHP.
 
