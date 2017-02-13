@@ -5,43 +5,31 @@
 | Web Routes
 |--------------------------------------------------------------------------
 |
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
+| This file is where you may define all of the routes that are handled
+| by your application. Just tell Laravel the URIs it should respond
+| to using a Closure or controller method. Build something great!
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Auth::routes();
+
+Route::group(['prefix' => 'auth'], function () {
+    Route::get('{provider}', 'Auth\AuthController@redirectToProvider')->name('auth.provider');
+    Route::get('{provider}/callback', 'Auth\AuthController@handleProviderCallback');
 });
 
+Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'role:admin'], 'namespace' => 'Admin', 'as' => 'admin.'], function () {
+    Route::get('/dashboard', 'DashboardController@dashboard')->name('dashboard');
+    Route::resource('posts', 'PostsController', ['only' => ['index', 'edit', 'update', 'destroy']]);
+});
 
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('/', 'PostsController@index')->name('home');
+    Route::get('/posts/feed', 'PostsController@feed')->name('posts.feed');
+    Route::resource('posts', 'PostsController', ['only' => ['create', 'store', 'show']]);
+    Route::resource('comments', 'CommentsController', ['only' => ['store', 'destroy']]);
+    Route::resource('users', 'UsersController', ['only' => ['show', 'edit', 'update']]);
+    Route::resource('newsletter-subscriptions', 'NewsletterSubscriptionsController', ['only' => ['store']]);
+});
 
-Auth::routes(
-
-);
-
-Route::get('/home', 'HomeController@index');
-
-Route::get('/bio/profileform', 'Bio\ProfileController@createform');
-Route::post('/bio/profile', 'Bio\ProfileController@formcheck');
-Route::get('/bio/profile', 'Bio\ProfileController@index')->name('bio.dashboard');
-
-
-//Route::group(['middleware' => ['web']], function() {
-// Default routes
-// Authentication Routes...
-//$this->get('login', 'Auth\LoginController@showLoginForm')->name('login');
-//$this->post('login', 'Auth\LoginController@login');
-//$this->post('logout', 'Auth\LoginController@logout')->name('logout');
-
-// Registration Routes...
-//$this->get('register', 'Auth\RegisterController@showRegistrationForm')->name('register');
-//$this->post('register', 'Auth\RegisterController@register');
-
-// Password Reset Routes...
-//$this->get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm');
-//$this->post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail');
-//$this->get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm');
-//$this->post('password/reset', 'Auth\ResetPasswordController@reset');
-//});    // web middleware route ends here
+Route::get('newsletter-subscriptions/unsubscribe', 'NewsletterSubscriptionsController@unsubscribe')->name('newsletter-subscriptions.unsubscribe');

@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Hash;
+use App\User;
+use App\Role;
 
 class DatabaseSeeder extends Seeder
 {
@@ -11,6 +14,18 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // $this->call(UsersTableSeeder::class);
+        // Users
+        $user = User::where('email', 'darthvader@deathstar.ds')->first();
+        if (! $user) {
+            $user = User::create([
+                'name' => 'anakin',
+                'email' => 'darthvader@deathstar.ds',
+                'password' => Hash::make('4nak1n')
+            ]);
+        }
+
+        // Roles
+        Role::firstOrCreate(['name' => Role::ROLE_ADMIN]);
+        Role::firstOrCreate(['name' => Role::ROLE_EDITOR]);
     }
 }

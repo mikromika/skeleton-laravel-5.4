@@ -2,38 +2,43 @@
 
 namespace App\Http\Controllers\Auth;
 
+use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Sentinel;
+use Cartalyst\Sentinel\Users;
+use App\SentinelUser;
 
 class LoginController extends Controller
 {
-    /*
-    |--------------------------------------------------------------------------
-    | Login Controller
-    |--------------------------------------------------------------------------
-    |
-    | This controller handles authenticating users for the application and
-    | redirecting them to your home screen. The controller uses a trait
-    | to conveniently provide its functionality to your applications.
-    |
-    */
+  public function login()
 
-    use AuthenticatesUsers;
+  {
+      return view('auth.login');
 
-    /**
-     * Where to redirect users after login.
-     *
-     * @var string
-     */
-    protected $redirectTo = '/home';
+  }
 
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        $this->middleware('guest', ['except' => 'logout']);
-    }
-}
+  public function postLogin(Request $request)
+  {
+
+
+    Sentinel::authenticate($request->all());
+
+     if(Sentinel::getUser->roles()->first()->name == 'admin')
+        return redirect('/');
+
+    elseif(Sentinel::getUser->roles()->first()->name == 'manager')
+    return ('you are logged as manager');
+
+      // return Sentinel::check();
+    //  return redirect ('/');
+  }
+  public function logout()
+
+  {   Sentinel::logout();
+      return redirect('/');
+
+  }
+
+
+
+} // end of class

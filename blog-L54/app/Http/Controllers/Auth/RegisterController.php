@@ -3,9 +3,10 @@
 namespace App\Http\Controllers\Auth;
 
 use App\User;
+use Validator;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Support\Facades\Hash;
 
 class RegisterController extends Controller
 {
@@ -23,12 +24,11 @@ class RegisterController extends Controller
     use RegistersUsers;
 
     /**
-     * Where to redirect users after registration.
+     * Where to redirect users after login / registration.
      *
      * @var string
      */
-  //  protected $redirectTo = '/home';
-    protected $redirectTo = '/bio/profileform';
+    protected $redirectTo = '/';
 
     /**
      * Create a new controller instance.
@@ -66,19 +66,7 @@ class RegisterController extends Controller
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
-            'password' => bcrypt($data['password']),
+            'password' => Hash::make($data['password']),
         ]);
     }
-
-    public function getRegister()
-    {
-        return view('auth.register');
-    }
-
-
-
-
-
-
-
-} // end of class 
+}

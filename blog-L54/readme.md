@@ -1,40 +1,95 @@
-<p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
+[![build status](https://gitlab.com/guillaumebriday/laravel-blog/badges/master/build.svg)](https://gitlab.com/guillaumebriday/laravel-blog/commits/master)
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+# Laravel 5.4 blog
 
-## About Laravel
+Ce dépôt a pour vocation de montrer les bonnes pratiques de développement sur [Laravel](http://laravel.com/) ainsi que de presenter plusieurs cas concrets d'utilisations des fonctionnalités du framework comme :
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as:
+- [La localisation](https://laravel.com/docs/5.4/localization)
+- [La programmation parallèle et asynchrone (Queue)](https://laravel.com/docs/5.4/queues)
+- [Les migrations](https://laravel.com/docs/5.4/migrations)
+- [Les seeds & factories](https://laravel.com/docs/5.4/seeding)
+- [Les tests](https://laravel.com/docs/5.4/testing)
+- [Les templates, partials et components](https://laravel.com/docs/5.4/blade)
+- [Les policies](https://laravel.com/docs/5.4/authorization)
+- [Les providers](https://laravel.com/docs/5.4/providers)
+- [Les requests](https://laravel.com/docs/5.4/validation#form-request-validation)
+- [Les helpers](https://laravel.com/docs/5.4/helpers)
+- [Les mails](https://laravel.com/docs/5.4/mail)
+- [Le cache](https://laravel.com/docs/5.4/cache)
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Informations
 
-Laravel is accessible, yet powerful, providing tools needed for large, robust applications. A superb combination of simplicity, elegance, and innovation give you tools you need to build any application with which you are tasked.
+L'application est prévue pour être internationalisé. Actuellement, seule la traduction française est disponible.
 
-## Learning Laravel
+## Installation
 
-Laravel has the most extensive and thorough documentation and video tutorial library of any modern web application framework. The [Laravel documentation](https://laravel.com/docs) is thorough, complete, and makes it a breeze to get started learning the framework.
+Vous pouvez utiliser [Laravel homestead](https://laravel.com/docs/5.4/homestead) pour installer le projet sur un environnement local.
 
-If you're not in the mood to read, [Laracasts](https://laracasts.com) contains over 900 video tutorials on a range of topics including Laravel, modern PHP, unit testing, JavaScript, and more. Boost the skill level of yourself and your entire team by digging into our comprehensive video library.
+## Quelques commandes
 
-## Contributing
+Initialisation du projet :
+```
+$ composer install
+$ npm install
+$ php artisan migrate
+```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](http://laravel.com/docs/contributions).
+Lancer les tests :
+```
+$ ./vendor/bin/phpunit
+```
 
-## Security Vulnerabilities
+Lancer php-cs-fixer :
+```
+$ php php-cs-fixer.phar fix . --rules=@PSR2 --verbose
+```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
+Construire les assets :
+```
+$ npm run dev
+```
+
+Lancer les seeds :
+```
+$ php artisan db:seed
+```
+
+Cela aura pour effet de créer un utilisateur. Vous pourrez alors l'utiliser pour vous connecter à l'application :
+Identifiant : ```darthvader@deathstar.ds```
+Mot de passe : ```4nak1n```
+
+Créer des données de tests :
+```
+$ php artisan db:seed --class=DevDatabaseSeeder
+```
+
+Lancer le worker de queue :
+```
+$ php artisan queue:work
+```
+
+Lancer le job pour la newsletter :
+```
+$ php artisan tinker
+> dispatch(new App\Jobs\PrepareNewsletterSubscriptionEmail());
+```
+
+## Plus de détails
+
+Plus de détails sont disponibles ou à venir sur [le blog de Guillaume Briday](https://blog.guillaumebriday.fr).
+
+## Todo
+
+- [ ] Migrer les tests vers la syntaxe de laravel 5.4
+- [ ] Rajouter des tests
+- [ ] Répondre à un commentaire
+- [ ] Ajouter une sécurité sur la newsletter
+- [ ] Ajouter la traduction en anglais et adapter les routes
+
+## Contribution
+
+N'hésitez pas à contribuer au projet en l'adaptant ou en y ajoutant des fonctionnalités ! Ouvrez des issues ou faites des Pull Requets, c'est fait pour.
 
 ## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
+Ce projet est une application open-source sous licence [MIT](http://opensource.org/licenses/MIT).
