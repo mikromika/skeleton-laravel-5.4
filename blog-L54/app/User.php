@@ -31,6 +31,11 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+  //  protected $casts = [ 
+
+        //'active' => 'boolean',
+    //];
+
     public function scopeLastWeek($query)
     {
         return $query->whereBetween('registered_at', [Carbon::now()->subWeek(), Carbon::now()])
@@ -72,4 +77,6 @@ class User extends Authenticatable
     {
         return $this->belongsToMany('App\Role');
     }
+
+
 }

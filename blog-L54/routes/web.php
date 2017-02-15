@@ -10,6 +10,20 @@
 | to using a Closure or controller method. Build something great!
 |
 */
+Route::get('/', array('as' => 'publichome', function()
+{
+   return View::make('welcome');
+}));
+
+
+Route::get('/contact', array('as' => 'publichome', function()
+{
+   return View::make('emails.contact.sendEmailForm');
+}));
+
+Route::post('/contact/store')->uses('ContactController@store')->name('contact.store');
+
+
 
 Auth::routes();
 
@@ -24,7 +38,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'role:admin'], 'name
 });
 
 Route::group(['middleware' => 'auth'], function () {
-    Route::get('/', 'PostsController@index')->name('home');
+    Route::get('/home', 'PostsController@index')->name('home');
     Route::get('/posts/feed', 'PostsController@feed')->name('posts.feed');
     Route::resource('posts', 'PostsController', ['only' => ['create', 'store', 'show']]);
     Route::resource('comments', 'CommentsController', ['only' => ['store', 'destroy']]);
