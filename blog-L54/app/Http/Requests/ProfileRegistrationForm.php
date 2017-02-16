@@ -3,6 +3,10 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+// use Illuminate\support\Mail;    // default mail class
+// use ProfileRegistrationForm;    // model
+// use App\User;       // model
+// use Welcomemail;   // model
 
 class ProfileRegistrationForm extends FormRequest
 {
@@ -32,5 +36,16 @@ class ProfileRegistrationForm extends FormRequest
             // 'mobile' => '',
             // 'location' => 'required',
         ];
+    }
+
+    public function persist ()
+
+    {
+      // create and save ProfileRegistrationForm information to DB
+      // $ProfileRegistrationForm = Profile::create (
+      //$this->only(['first_name', 'last_name' ,'phone', 'mobile','location'])
+      //       );
+      //  Mail::to($user)->send(new Welcomemail($user));
+
     }
 }
