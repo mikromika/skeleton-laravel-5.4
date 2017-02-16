@@ -85,8 +85,8 @@ class Mailbox {
 	 *  Date - current system time formatted according to RFC2822
 	 *  Driver - protocol used to access this mailbox: POP3, IMAP, NNTP
 	 *  Mailbox - the mailbox name
-	 *  Nmsgs - number of mails in the mailbox
-	 *  Recent - number of recent mails in the mailbox
+	 *  Nmsgs - number of (total?) mails in the mailbox
+	 *  Recent - number of recent (new?) mails in the mailbox
 	 *
 	 * @return stdClass
 	 */

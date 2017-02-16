@@ -29,6 +29,8 @@ class IncomingMail {
 	/** @var IncomingMailAttachment[] */
 	protected $attachments = array();
 
+
+	// save attachments from incoming emails
 	public function addAttachment(IncomingMailAttachment $attachment) {
 		$this->attachments[$attachment->id] = $attachment;
 	}

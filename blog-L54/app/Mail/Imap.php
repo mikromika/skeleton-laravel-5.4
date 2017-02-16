@@ -11,6 +11,10 @@ use App\Mail\IncomingMailAttachment;
 
 class Imap extends Model
 {
+
+ 
+
+
     //
 }
 

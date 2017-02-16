@@ -18,17 +18,11 @@ class ContactController extends Controller
     'message' => 'required|min:6',
 
   ];
-  //  'message' => '',
-  // validate
-  //dd($request, $rules);
 
     $this->validate($request, $rules);
-//  dd($request, $rules);
     Mail::to('example@example.com')
     ->send(new SendContact($request->only(['name', 'message'])));
 
-//    dd($request, $rules);
-//    return  view ('welcome');
     return redirect()->back()->with(
     'success', 'The Email was sent');
 
