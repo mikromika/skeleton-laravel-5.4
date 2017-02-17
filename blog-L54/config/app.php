@@ -162,7 +162,7 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
-        // extra 
+        // extra
         Collective\Html\HtmlServiceProvider::class,
         Laravel\Socialite\SocialiteServiceProvider::class,
 
@@ -174,14 +174,18 @@ return [
         /*
          * Application Service Providers...
          */
+        App\Providers\CustomizeServiceProvider::class,
+
         App\Providers\AppServiceProvider::class,
         App\Providers\AuthServiceProvider::class,
+      //   App\Core\Auth\Providers\AuthServiceProvider::class, // New folder
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         App\Providers\PostProvider::class,
-        App\Providers\CommentProvider::class,
+        App\Core\Providers\CommentProvider::class,
         App\Providers\UserServiceProvider::class,
+
 
     ],
 

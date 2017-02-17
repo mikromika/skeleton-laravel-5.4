@@ -1,6 +1,6 @@
 {
-    "name": "laravel 5.3 blog",
-    "description": "Laravel 5.3 blog.",
+    "name": "laravel 5.4 blog",
+    "description": "Laravel 5.4 blog.",
     "keywords": ["framework", "laravel", "blog", "exemple"],
     "license": "MIT",
     "type": "project",
@@ -11,8 +11,8 @@
         "laravel/socialite": "^3.0",
         "doctrine/dbal": "^2.5",
         "laravel/tinker": "^1.0",
-        "laravel/browser-kit-testing": "^1.0",
-        "php-imap/php-imap": "^2.0"
+        "laravel/browser-kit-testing": "^1.0"
+
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
@@ -27,17 +27,19 @@
         ],
         "psr-4": {
             "App\\": "app/"
+
         },
         "files": [
-            "app/Helpers/user.php",
-            "app/Helpers/date.php"
+            "app/Core/Helpers/user.php",
+            "app/Core/Helpers/date.php"
+
         ]
     },
     "autoload-dev": {
         "classmap": [
             "tests/TestCase.php",
             "tests/BrowserKitTest.php"
-        ]
+                    ]
     },
     "scripts": {
         "post-root-package-install": [
