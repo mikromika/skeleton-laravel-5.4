@@ -174,8 +174,7 @@ return [
         /*
          * Application Service Providers...
          */
-        App\Providers\CustomizeServiceProviders::class,
-
+      
         App\Providers\AppServiceProvider::class,
         // App\Providers\AuthServiceProvider::class,
         App\Core\Auth\Providers\AuthServiceProvider::class, // New folder
@@ -240,6 +239,8 @@ return [
         'Html' => Collective\Html\HtmlFacade::class,
         'Socialite' => Laravel\Socialite\Facades\Socialite::class,
 
-    ],
+
+    ]
+  //],
 
 ];
