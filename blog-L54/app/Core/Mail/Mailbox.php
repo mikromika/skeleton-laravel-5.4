@@ -1,4 +1,4 @@
-<?php namespace App\Mail\;
+<?php namespace App\Core\Mail\;
 
 use stdClass;
 

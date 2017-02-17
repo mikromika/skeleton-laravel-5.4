@@ -1,18 +1,18 @@
 <?php
 
-namespace App\Mail;
+namespace App\Core\Mail;
 
 // Buil up Imap handler UI
 
 use Illuminate\Database\Eloquent\Model;
-use App\MailMailbox as ImapMailbox;
-use App\Mail\IncomingMail;
-use App\Mail\IncomingMailAttachment;
+use App\Core\MailMailbox as ImapMailbox;
+use App\Core\Mail\IncomingMail;
+use App\Core\Mail\IncomingMailAttachment;
 
 class Imap extends Model
 {
 
- 
+
 
 
     //

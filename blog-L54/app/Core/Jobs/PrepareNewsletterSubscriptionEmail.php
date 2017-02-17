@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Jobs;
+namespace App\Core\Jobs;
 
 use Illuminate\Bus\Queueable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use App\NewsletterSubscription;
-use App\Jobs\SendNewsletterSubscriptionEmail;
+use App\Core\Jobs\SendNewsletterSubscriptionEmail;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Carbon\Carbon;
 

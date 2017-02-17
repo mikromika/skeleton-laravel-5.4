@@ -1,5 +1,5 @@
 <?php
-namespace App\Mail;
+namespace App\Core\Mail;
 
 class IncomingMailAttachment {
 
