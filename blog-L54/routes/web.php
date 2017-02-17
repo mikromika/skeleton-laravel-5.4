@@ -16,6 +16,12 @@ Route::get('/', array('as' => 'publichome', function()
 }));
 
 
+Route::get('/test/profile', array('as' => 'profile', function()
+{
+   return View::make('users/profileform/create');
+}));
+
+
 Route::get('/contact', array('as' => 'publichome', function()
 {
    return View::make('emails.contact.sendEmailForm');
