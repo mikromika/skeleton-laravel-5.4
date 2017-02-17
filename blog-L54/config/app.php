@@ -176,13 +176,11 @@ return [
          */
 
         App\Providers\AppServiceProvider::class,
-        // App\Providers\AuthServiceProvider::class,
         App\Core\Auth\Providers\AuthServiceProvider::class, // New folder
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         App\Core\Providers\PostProvider::class,
-        //App\Providers\CommentProvider::class,
         App\Core\Providers\CommentProvider::class,
         App\Providers\UserServiceProvider::class,
 
