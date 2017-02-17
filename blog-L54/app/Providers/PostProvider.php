@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Core\Providers;
+namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use App\User;
+use App\Post;
 use Carbon\Carbon;
 
-class UserServiceProvider extends ServiceProvider
+class PostProvider extends ServiceProvider
 {
     /**
      * Bootstrap the application services.
@@ -15,8 +15,8 @@ class UserServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        User::creating(function ($user) {
-            $user->registered_at = Carbon::now();
+        Post::creating(function ($post) {
+            $post->posted_at = Carbon::now();
         });
     }
 }
