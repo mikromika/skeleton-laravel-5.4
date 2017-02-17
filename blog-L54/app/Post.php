@@ -3,7 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use App\Scopes\PostedScope;
+use App\Core\Scopes\PostedScope;
 use Carbon\Carbon;
 
 class Post extends Model
