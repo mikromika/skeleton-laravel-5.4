@@ -4,9 +4,9 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 // use Illuminate\support\Mail;    // default mail class
-// use ProfileRegistrationForm;    // model
+// use ProfileForm;    // model
 // use App\User;       // model
-// use Welcomemail;   // model
+// use App\Mail\Welcomemail;   // model
 
 class ProfileRegistrationForm extends FormRequest
 {
