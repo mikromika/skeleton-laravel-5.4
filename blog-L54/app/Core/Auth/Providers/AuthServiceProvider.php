@@ -1,6 +1,7 @@
 <?php
 
-namespace App\Providers;
+namespace App\Core\Auth\Providers;
+
 
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
@@ -13,8 +14,8 @@ class AuthServiceProvider extends ServiceProvider
      * @var array
      */
     protected $policies = [
-        'App\Comment' => 'App\Policies\CommentPolicy',
-        'App\User' => 'App\Policies\UserPolicy',
+        'App\Comment' => 'App\Core\Policies\CommentPolicy',
+        'App\User' => 'App\Core\Policies\UserPolicy',
     ];
 
     /**
