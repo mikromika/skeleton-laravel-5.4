@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Core\Auth\Providers;
+namespace App\Providers;
 
 
 use Illuminate\Support\Facades\Gate;
