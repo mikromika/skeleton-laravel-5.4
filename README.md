@@ -1,6 +1,8 @@
  * Main folder is skeleton-laravel-5.4 
  * blog-L54 is project folder
  
+ * NEW chat room is open :  gitter.im/skeleton-laravel-5-4 
+ 
 
 I am new with PHP and Laravel, I have started from zero knowledge from PHP.
 
