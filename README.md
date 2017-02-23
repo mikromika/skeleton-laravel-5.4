@@ -1,11 +1,12 @@
  * Main folder is skeleton-laravel-5.4 
  * blog-L54 is project folder
  
- * NEW chat room is open.
+ * NEW chat room is open. 
+ * https://gitter.im/
 
  [![Join the chat at https://gitter.im/skeleton-laravel-5-4/Lobby](https://badges.gitter.im/skeleton-laravel-5-4/Lobby.svg)](https://gitter.im/skeleton-laravel-5-4/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-I am new with PHP and Laravel, I have started from zero knowledge PHP.
+I am new with PHP and Laravel, I have started from zero knowledge with PHP.
 
 I have started programmimg with php about four month ago.
 First tried with Slim framework which is based for Laravel 4.
