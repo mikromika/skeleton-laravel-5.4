@@ -1,7 +1,7 @@
  * Main folder is skeleton-laravel-5.4 
  * blog-L54 is project folder
  
- * NEW chat room is open :https://gitter.im/skeleton-laravel-5-4
+ * NEW chat room is open :<a href="https://gitter.im/skeleton-laravel-5-4"> https://gitter.im/skeleton-laravel-5-4 </a>
 
 [![Join the chat at https://gitter.im/skeleton-laravel-5-4/Lobby](https://badges.gitter.im/skeleton-laravel-5-4/Lobby.svg)](https://gitter.im/skeleton-laravel-5-4/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
