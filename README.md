@@ -30,3 +30,6 @@ Second project  Sentinel, This skipped. I'll make it for my first and main proje
 - Nagios / nmap extended
 - Event channels; later expand for Telegram bot
 - Push info to Twitter, and FB.
+
+
+[![Join the chat at https://gitter.im/skeleton-laravel-5-4/Lobby](https://badges.gitter.im/skeleton-laravel-5-4/Lobby.svg)](https://gitter.im/skeleton-laravel-5-4/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
