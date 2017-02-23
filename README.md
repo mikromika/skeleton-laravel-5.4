@@ -2,8 +2,6 @@
  * blog-L54 is project folder
  
  * NEW chat room is open :  gitter.im/skeleton-laravel-5-4 
- *
-*
 
  
 
@@ -20,12 +18,13 @@ I swiched over to Laravel 5.3 -- This skeleton is based for L5.4.
 Idea is go to step by step forward.
 
 First project;
-Blog - I am building two step registeration.
+Blog - I am building two step registeration and merged adviced login system with user has diffrent roles and backend admin area. 
 
-Second project  Sentinel
-I am try to build adviced login system with user has diffrent roles and backend admin area, not only panel but
-also
-- app logs for Gui
+Second project  Sentinel, This skipped. I'll make it for my first and main project-
+
+3rd: Later on, I'll start look at, how make these for my main project.
+
+- app logs for Gui, github updates via simple GUI.
 - user/roles management 
 - Alert system which bring low level alert for Gui from backend. (mysql, postfix, dovecot...etc)
 - Nagios / nmap extended
