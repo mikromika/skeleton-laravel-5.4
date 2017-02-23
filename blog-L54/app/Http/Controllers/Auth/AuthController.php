@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use Auth;
 use Core\Auth;
-use App\User;
+use App\Users\Models\User;
 use Socialite;
 
 class AuthController extends Controller

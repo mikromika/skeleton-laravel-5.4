@@ -48,7 +48,7 @@ class Post extends Model
 
     public function author()
     {
-        return $this->belongsTo('App\User', 'author_id');
+        return $this->belongsTo('App\Users\Models\User', 'author_id');
     }
 
     public function comments()

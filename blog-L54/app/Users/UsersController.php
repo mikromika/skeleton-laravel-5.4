@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Users\;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use App\Http\Requests\UsersRequest;
-use App\User;
+use App\Users\Models\User;
 use App\Role;
 
 class UsersController extends Controller

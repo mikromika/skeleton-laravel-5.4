@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\PostsRequest;
 use Carbon\Carbon;
 use App\Post;
-use App\User;
+use App\Users\Models\User;
 
 class PostsController extends Controller
 {
