@@ -5,7 +5,7 @@ namespace App\Users\Models;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Carbon\Carbon;
-use App\Role;
+use App\Core\Auth\Models\Role;
 
 class User extends Authenticatable
 {
@@ -75,7 +75,7 @@ class User extends Authenticatable
 
     public function roles()
     {
-        return $this->belongsToMany('App\Role');
+        return $this->belongsToMany('App\Core\Auth\Models\Role');
     }
 
 
