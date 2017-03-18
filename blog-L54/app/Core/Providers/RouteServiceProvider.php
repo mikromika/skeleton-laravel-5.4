@@ -14,7 +14,13 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @var string
      */
-  //  protected $namespace = 'App\Http\Controllers';
+
+   protected $corespace = 'App\Core\Controllers';
+   protected $authspace = 'App\Core\Controllers\Auth';
+   //protected $adminspace = 'App\Core\Controllers\Admin';
+   //protected $businessspace = 'App\Business\Controllers';
+   //protected $userspace = 'App\Users\Controllers';
+   //protected $namespace = 'App\Http\Controllers';
 
     /**
      * Define your route model bindings, pattern filters, etc.
@@ -39,6 +45,9 @@ class RouteServiceProvider extends ServiceProvider
 
         $this->mapWebRoutes();
 
+        $this->mapAuthRoutes();
+
+        $this->mapCoreRoutes();
         //
     }
 
@@ -49,6 +58,22 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @return void
      */
+
+     protected function mapCoreRoutes()
+     {
+         Route::middleware('web')
+              ->namespace($this->corespace)
+              ->group(base_path('routes/web.php'));
+     }
+
+     protected function mapAuthRoutes()
+     {
+         Route::middleware('web')
+              ->namespace($this->authspace)
+              ->group(base_path('routes/web.php'));
+     }
+
+
     protected function mapWebRoutes()
     {
         Route::middleware('web')

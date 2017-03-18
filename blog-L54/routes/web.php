@@ -29,17 +29,15 @@ Route::get('/contact', array('as' => 'publichome', function()
 
 Route::post('/contact/store')->uses('ContactController@store')->name('contact.store');
 
-
-
 Auth::routes();
 
 Route::group(['prefix' => 'auth'], function () {
-    Route::get('{provider}', '\App\Core\Auth\Contollers\AuthController@redirectToProvider')->name('auth.provider');
-    Route::get('{provider}/callback', '\App\Core\Auth\Controllers\AuthController@handleProviderCallback');
+    Route::get('{provider}', '\App\Core\Contollers\Auth\AuthController@redirectToProvider')->name('auth.provider');
+    Route::get('{provider}/callback', '\App\Core\Controllers\Auth\AuthController@handleProviderCallback');
 });
 
 Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'role:admin'], 'namespace' => 'Admin', 'as' => 'admin.'], function () {
-    Route::get('/dashboard', '\App\Core\Admin\Controllers\DashboardController@dashboard')->name('dashboard');
+    Route::get('/dashboard', '\App\Core\Controllers\Admin\DashboardController@dashboard')->name('dashboard');
     Route::resource('posts', 'PostsController', ['only' => ['index', 'edit', 'update', 'destroy']]);
 });
 
@@ -50,6 +48,35 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource('comments', 'CommentsController', ['only' => ['store', 'destroy']]);
     Route::resource('users', '\App\Users\Controllers\UsersController', ['only' => ['show', 'edit', 'update']]);
     Route::resource('newsletter-subscriptions', 'NewsletterSubscriptionsController', ['only' => ['store']]);
+
+
+// customized login routes and pages
+    Route::get('login', '\App\Core\Controllers\Auth\LoginController@Login')->name('login');
+    Route::post('login', '\App\Core\Controllers\Auth\LoginController@login');
+    Route::post('logout', '\App\Core\Controllers\Auth\LoginController@logout')->name('logout');
+
+    // Registration Routes...
+    //Route::get('register/', 'Auth\RegisterController@showRegistrationForm')->name('register');
+    //Route::post('register/', 'Auth\RegisterController@register');
+
+    // Password Reset Routes...
+    //Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
+    //Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail');
+    //Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
+    //Route::post('password/reset', 'Auth\ResetPasswordController@reset');
+
+
+
+
+
+
+
+
 });
+
+
+
+
+
 
 Route::get('newsletter-subscriptions/unsubscribe', 'NewsletterSubscriptionsController@unsubscribe')->name('newsletter-subscriptions.unsubscribe');

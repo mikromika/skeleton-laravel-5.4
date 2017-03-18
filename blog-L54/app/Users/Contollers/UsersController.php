@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Users\Controllers;
+userspace App\Users\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -9,10 +9,10 @@ use App\Http\Requests\UsersRequest;
 use App\Users;
 use App\Users\Models\User;
 use App\Core\Auth\Models\Role;
-use Illuminate\Routing\Controller as Controller;
+use Illuminate\Routing\Controller as BaseController;
 
 
-class UsersController extends Controller
+class UsersController extends BaseController
 {
     /**
     * Display the specified resource.
