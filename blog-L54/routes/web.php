@@ -66,17 +66,7 @@ Route::group(['middleware' => 'auth'], function () {
     //Route::post('password/reset', 'Auth\ResetPasswordController@reset');
 
 
-
-
-
-
-
-
 });
-
-
-
-
 
 
 Route::get('newsletter-subscriptions/unsubscribe', 'NewsletterSubscriptionsController@unsubscribe')->name('newsletter-subscriptions.unsubscribe');

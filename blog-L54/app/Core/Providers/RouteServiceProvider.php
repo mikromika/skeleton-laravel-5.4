@@ -19,7 +19,7 @@ class RouteServiceProvider extends ServiceProvider
    protected $authspace = 'App\Core\Controllers\Auth';
    //protected $adminspace = 'App\Core\Controllers\Admin';
    //protected $businessspace = 'App\Business\Controllers';
-   //protected $userspace = 'App\Users\Controllers';
+   protected $userspace = 'App\Users\Controllers';
    //protected $namespace = 'App\Http\Controllers';
 
     /**
