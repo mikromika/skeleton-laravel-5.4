@@ -1,6 +1,6 @@
 <?php
-authspace App\Core\Controllers\Auth;
-//namespace App\Core\Auth\Controllers;
+//authspace App\Core\Controllers\Auth;
+namespace App\Core\Auth\Controllers;
 use Illuminate\Routing\Controller as BaseController;
 
 use App\Users\Controllers;

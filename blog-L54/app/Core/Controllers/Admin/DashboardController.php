@@ -1,7 +1,7 @@
 <?php
 
-adminspace App\Core\Controllers\Admin;
-//namespace App\Core\Admin\Controllers;
+//adminspace App\Core\Controllers\Admin;
+namespace App\Core\Admin\Controllers;
 
 //use App\Http\Controllers\Controller;
 //use App\Users\Controllers\UsersController;
