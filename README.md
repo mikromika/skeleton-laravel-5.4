@@ -20,9 +20,7 @@ Idea is go to step by step forward.
 First project;
 Blog - I am building two step registeration and merged adviced login system with user has diffrent roles and backend admin area. 
 
-Second project  Sentinel, This skipped. I'll make it for my first and main project-
-
-3rd: Later on, I'll start look at, how make these for my main project.
+2nd: Later on, I'll start look at, how make these for my main project.
 
 - app logs for Gui, github updates via simple GUI.
 - user/roles management 
